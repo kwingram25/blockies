@@ -102,16 +102,14 @@
 				cc.fillRect(col * opts.scale, row * opts.scale, opts.scale, opts.scale);
 			}
 		}
-		return canvas;
+		return [canvas, [opts.color, opts.bgcolor, opts.spotcolor]];
 	}
 
 	function createIcon(opts) {
 		var opts = buildOpts(opts || {});
 		var canvas = document.createElement('canvas');
 
-		renderIcon(opts, canvas);
-
-		return canvas;
+		return renderIcon(opts, canvas);
 	}
 
 	var api = {
